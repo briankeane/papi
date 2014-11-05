@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141027142223) do
+ActiveRecord::Schema.define(version: 20141105140919) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20141027142223) do
     t.string   "type"
     t.string   "key"
     t.integer  "duration"
-    t.datetime "estimated_airtime"
+    t.datetime "airtime"
     t.integer  "commentary_preceding_overlap"
     t.integer  "song_preceding_overlap"
     t.integer  "commercial_preceding_overlap"
@@ -83,7 +83,7 @@ ActiveRecord::Schema.define(version: 20141027142223) do
 
   create_table "spins", force: true do |t|
     t.integer  "current_position"
-    t.datetime "estimated_airtime"
+    t.datetime "airtime"
     t.integer  "audio_block_id"
     t.datetime "created_at"
     t.datetime "updated_at"

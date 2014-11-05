@@ -383,17 +383,17 @@ response:
   "spins": [
       { "current_position": 76,
         "audio_block_id": 75,
-        "estimated_airtime": time  // (number, secs since 1970)
+        "airtime": time  // (number, secs since 1970)
         "duration": 1783920     // in milliseconds
       },
       { "current_position": 77,
         "audio_block_id": 75,
-        "estimated_airtime": time  // (number, secs since 1970)
+        "airtime": time  // (number, secs since 1970)
         "duration": 1783920     // in milliseconds
       },
       { "current_position": 78,
         "audio_block_id": 75,
-        "estimated_airtime": time  // (number, secs since 1970)
+        "airtime": time  // (number, secs since 1970)
         "duration": 1783920        // in milliseconds 
       }]
 }
@@ -406,7 +406,7 @@ response:
 {
   "current_position": 76,
   "audio_block_id": 75,
-  "estimated_airtime": datetime  // (number, secs since 1970)
+  "airtime": datetime  // (number, secs since 1970)
   "duration": 1783920     // in milliseconds
 }
 ```
@@ -416,7 +416,7 @@ route '/stations/:station_id/get_next_spin_with_audio'   GET
 {
   "current_position": 76,
   "audio_block_id": 75,
-  "estimated_airtime": datetime  // (number, secs since 1970)
+  "airtime": datetime  // (number, secs since 1970)
   "duration": 1783920     // in milliseconds
   "audio_blob": "AUDIODATA HERE"
 }
@@ -522,7 +522,7 @@ response:
     t.string   "type"
     t.string   "key"
     t.integer  "duration"
-    t.datetime "estimated_airtime"
+    t.datetime "airtime"
     t.integer  "commentary_preceding_overlap"
     t.integer  "song_preceding_overlap"
     t.integer  "commercial_preceding_overlap"
@@ -566,7 +566,7 @@ response:
   create_table "spins", force: true do |t|
     t.integer  "current_position"
     t.integer  "station_id"
-    t.datetime "estimated_airtime"
+    t.datetime "airtime"
     t.integer  "audio_block_id"
     t.datetime "created_at"
     t.datetime "updated_at"

@@ -1,7 +1,7 @@
 module PL
   class CommercialBlock < Entity
 
-    attr_accessor :id, :duration, :estimated_airtime, :commercials, :station_id, :cb_position, :audio_file, :current_position
+    attr_accessor :id, :duration, :airtime, :commercials, :station_id, :cb_position, :audio_file, :current_position
 
     def initialize(attrs)
       # store default values if necessary
@@ -15,11 +15,11 @@ module PL
     end
 
     def estimated_end_time
-      estimated_airtime + @duration/1000
+      airtime + @duration/1000
     end
 
     def airtime_in_ms
-      @estimated_airtime.to_f * 1000
+      @airtime.to_f * 1000
     end
 
     def to_hash
